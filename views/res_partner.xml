@@ -4,9 +4,9 @@
         <record model="ir.ui.view" id="view_partner_credit_form">
             <field name="name">res.partner.credit.form</field>
             <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
             <field name="arch" type="xml">
-                <group name="sale" position="inside">
+                <group name="acc_sale" position="inside">
                     <field name="credit_limit" attrs="{'invisible': [('credit_ignore', '=', True)]}"/>
                     <field name="credit_ignore"/>
                     <field name="expired_ignore"/>
