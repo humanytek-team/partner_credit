@@ -17,9 +17,9 @@ class SaleOrder(models.Model):
                         if invoice.date_due <= fields.Date.today():
                             raise exceptions.Warning(_("¡POR EL MOMENTO NO SE PERMITE VENDER A CRÉDITO. EL CLIENTE TIENE SALDO VENCIDO EN FACTURAS ANTERIORES. PARA MAYOR INFORMACIÓN CONSULTAR EN CONTABILIDAD!"))
                 if not order.partner_id.credit_ignore:
-                    credit = order.amount_total*order.pricelist_id.currency_id.rate
+                    credit = order.amount_total/order.pricelist_id.currency_id.rate
                     for invoice in invoices:
-                        credit += invoice.amount_total*invoice.currency_id.rate
+                        credit += invoice.amount_total/invoice.currency_id.rate
                     if credit > order.partner_id.credit_limit:
                         raise exceptions.Warning(_("¡EL CLIENTE NO CUENTA CON CRÉDITO SUFICIENTE PARA ESTA VENTA, PARA MAYOR INFORMACIÓN CONSULTAR EN CONTABILIDAD!"))
         super(SaleOrder, self).action_confirm()
