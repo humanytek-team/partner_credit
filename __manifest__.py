@@ -28,7 +28,6 @@
         'sale',
     ],
     'data': [
-        'views/account.xml',
         'views/res_partner.xml',
     ]
 }

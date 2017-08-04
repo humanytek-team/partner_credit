@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import api, exceptions, fields, models, _
-
+from datetime import timedelta
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
@@ -18,6 +18,7 @@ class ResPartner(models.Model):
         compute='_get_credit_used',
     )
     credit_limit = fields.Monetary()
+    grace_days = fields.Integer()
     expired_ignore = fields.Boolean(
         default=False,
     )
@@ -29,8 +30,10 @@ class ResPartner(models.Model):
         invoices = self.env['account.invoice'].search([('partner_id', '=', self.id), ('state', '=', 'open'), ('payment_term_id', 'in', payment_term_credits_ids)])
         if not self.expired_ignore:
             self.credit_expired = False
+            today = fields.Date.from_string(fields.Date.today())
             for invoice in invoices:
-                if invoice.date_due <= fields.Date.today():
+                date_due = fields.Date.from_string(invoice.date_due)
+                if date_due + timedelta(days=self.grace_days) <= today:
                     self.credit_expired = True
         self.credit_avaiable = self.credit_limit
         self.credit_used = 0
