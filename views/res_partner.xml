@@ -24,7 +24,7 @@
                     <field name="name"/>
                     <field name="credit_limit"/>
                     <field name="credit_used"/>
-                    <field name="credit_avaiable"/>
+                    <field name="credit_available"/>
                 </tree>
             </field>
         </record>

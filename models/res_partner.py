@@ -6,7 +6,7 @@ from datetime import timedelta
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    credit_avaiable = fields.Monetary(
+    credit_available = fields.Monetary(
         compute='_get_credit_used'
     )
     credit_expired = fields.Boolean(
@@ -39,7 +39,7 @@ class ResPartner(models.Model):
                 date_due = fields.Date.from_string(invoice.date_due)
                 if date_due + timedelta(days=self.grace_days) <= today:
                     self.credit_expired = True
-        self.credit_avaiable = self.credit_limit
+        self.credit_available = self.credit_limit
         self.credit_used = 0
         if not self.sale_order_ignore:
             for sale in self.env['sale.order'].search([('partner_id', '=', self.id), ('state', '=', 'sale'), ('invoice_exist', '=', False)]):
@@ -47,4 +47,4 @@ class ResPartner(models.Model):
         if not self.credit_ignore:
             for invoice in invoices:
                 self.credit_used += invoice.amount_total/invoice.currency_id.rate
-        self.credit_avaiable -= self.credit_used
+        self.credit_available -= self.credit_used

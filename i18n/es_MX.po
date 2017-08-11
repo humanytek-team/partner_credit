@@ -16,8 +16,8 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_credit
-#: model:ir.model.fields,field_description:partner_credit.field_res_partner_credit_avaiable
-msgid "Credit avaiable"
+#: model:ir.model.fields,field_description:partner_credit.field_res_partner_credit_available
+msgid "Credit available"
 msgstr "Crédito disponible"
 
 #. module: partner_credit
