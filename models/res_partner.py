@@ -42,7 +42,7 @@ class ResPartner(models.Model):
         self.credit_avaiable = self.credit_limit
         self.credit_used = 0
         if not self.sale_order_ignore:
-            for sale in self.env['sale.order'].search([('partner_id', '=', self.id), ('state', '=', 'sale'), ('invoice_status', '=', 'to invoice')]):
+            for sale in self.env['sale.order'].search([('partner_id', '=', self.id), ('state', '=', 'sale'), ('invoice_exist', '=', False)]):
                 self.credit_used += sale.amount_total/sale.currency_id.rate
         if not self.credit_ignore:
             for invoice in invoices:
