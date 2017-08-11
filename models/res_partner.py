@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import api, exceptions, fields, models, _
+from openerp import api, exceptions, fields, models, _
 from datetime import timedelta
 
 

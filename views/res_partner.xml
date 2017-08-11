@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<openerp>
     <data>
         <record model="ir.ui.view" id="view_partner_credit_form">
             <field name="name">res.partner.credit.form</field>
@@ -38,4 +38,4 @@
 
         <menuitem id="menu_partner_credit" name="Partner credit" parent="account.menu_finance_reports" action="partner_credit_action_tree"/>
     </data>
-</odoo>
+</openerp>
