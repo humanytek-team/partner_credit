@@ -11,6 +11,7 @@
                     <field name="credit_ignore"/>
                     <field name="grace_days" attrs="{'invisible': [('expired_ignore', '=', True)]}"/>
                     <field name="expired_ignore"/>
+                    <field name="sale_order_ignore"/>
                 </group>
             </field>
         </record>

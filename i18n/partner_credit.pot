@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-05 21:50+0000\n"
-"PO-Revision-Date: 2017-08-05 21:50+0000\n"
+"POT-Creation-Date: 2017-08-11 15:13+0000\n"
+"PO-Revision-Date: 2017-08-11 15:13+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,37 +17,31 @@ msgstr ""
 
 #. module: partner_credit
 #: model:ir.model.fields,field_description:partner_credit.field_res_partner_credit_avaiable
-#: model:ir.model.fields,field_description:partner_credit.field_res_users_credit_avaiable
 msgid "Credit avaiable"
 msgstr ""
 
 #. module: partner_credit
 #: model:ir.model.fields,field_description:partner_credit.field_res_partner_credit_expired
-#: model:ir.model.fields,field_description:partner_credit.field_res_users_credit_expired
 msgid "Credit expired"
 msgstr ""
 
 #. module: partner_credit
 #: model:ir.model.fields,field_description:partner_credit.field_res_partner_credit_ignore
-#: model:ir.model.fields,field_description:partner_credit.field_res_users_credit_ignore
 msgid "Credit ignore"
 msgstr ""
 
 #. module: partner_credit
 #: model:ir.model.fields,field_description:partner_credit.field_res_partner_credit_used
-#: model:ir.model.fields,field_description:partner_credit.field_res_users_credit_used
 msgid "Credit used"
 msgstr ""
 
 #. module: partner_credit
 #: model:ir.model.fields,field_description:partner_credit.field_res_partner_expired_ignore
-#: model:ir.model.fields,field_description:partner_credit.field_res_users_expired_ignore
 msgid "Expired ignore"
 msgstr ""
 
 #. module: partner_credit
 #: model:ir.model.fields,field_description:partner_credit.field_res_partner_grace_days
-#: model:ir.model.fields,field_description:partner_credit.field_res_users_grace_days
 msgid "Grace days"
 msgstr ""
 
@@ -63,13 +57,13 @@ msgid "Partner credit"
 msgstr ""
 
 #. module: partner_credit
-#: model:ir.model,name:partner_credit.model_sale_order
-msgid "Sales Order"
+#: model:ir.model.fields,field_description:partner_credit.field_res_partner_sale_order_ignore
+msgid "Sale order ignore"
 msgstr ""
 
 #. module: partner_credit
-#: model:ir.model,name:partner_credit.model_partner_credit
-msgid "partner.credit"
+#: model:ir.model,name:partner_credit.model_sale_order
+msgid "Sales Order"
 msgstr ""
 
 #. module: partner_credit

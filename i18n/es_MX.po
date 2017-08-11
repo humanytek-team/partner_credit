@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-05 21:51+0000\n"
-"PO-Revision-Date: 2017-08-05 21:51+0000\n"
+"POT-Creation-Date: 2017-08-11 15:14+0000\n"
+"PO-Revision-Date: 2017-08-11 15:14+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,50 +17,43 @@ msgstr ""
 
 #. module: partner_credit
 #: model:ir.model.fields,field_description:partner_credit.field_res_partner_credit_avaiable
-#: model:ir.model.fields,field_description:partner_credit.field_res_users_credit_avaiable
 msgid "Credit avaiable"
 msgstr "Crédito disponible"
 
 #. module: partner_credit
 #: model:ir.model.fields,field_description:partner_credit.field_res_partner_credit_expired
-#: model:ir.model.fields,field_description:partner_credit.field_res_users_credit_expired
 msgid "Credit expired"
 msgstr "Crédito expirado"
 
 #. module: partner_credit
 #: model:ir.model.fields,field_description:partner_credit.field_res_partner_credit_ignore
-#: model:ir.model.fields,field_description:partner_credit.field_res_users_credit_ignore
 msgid "Credit ignore"
 msgstr "Permitir sobre pasar límite de crédito"
 
 #. module: partner_credit
 #: model:ir.model.fields,field_description:partner_credit.field_res_partner_credit_used
-#: model:ir.model.fields,field_description:partner_credit.field_res_users_credit_used
 msgid "Credit used"
-msgstr "Crédito urilizado"
+msgstr "Crédito utilizado"
 
 #. module: partner_credit
 #: model:ir.model.fields,field_description:partner_credit.field_res_partner_expired_ignore
-#: model:ir.model.fields,field_description:partner_credit.field_res_users_expired_ignore
 msgid "Expired ignore"
 msgstr "Permitir vender a crédito con saldo vencido"
 
 #. module: partner_credit
 #: model:ir.model.fields,field_description:partner_credit.field_res_partner_grace_days
-#: model:ir.model.fields,field_description:partner_credit.field_res_users_grace_days
 msgid "Grace days"
 msgstr "Días de gracia"
-
-#. module: partner_credit
-#: model:ir.actions.act_window,name:partner_credit.partner_credit_action_tree
-#: model:ir.model,name:partner_credit.model_res_partner
-msgid "Clientes"
-msgstr ""
 
 #. module: partner_credit
 #: model:ir.ui.menu,name:partner_credit.menu_partner_credit
 msgid "Partner credit"
 msgstr "Crédito de clientes"
+
+#. module: partner_credit
+#: model:ir.model.fields,field_description:partner_credit.field_res_partner_sale_order_ignore
+msgid "Sale order ignore"
+msgstr "Ignorar ventas sin facturar"
 
 #. module: partner_credit
 #: code:addons/partner_credit/models/sale_order.py:17

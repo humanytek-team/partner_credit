@@ -2,6 +2,7 @@
 from odoo import api, exceptions, fields, models, _
 from datetime import timedelta
 
+
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
@@ -22,6 +23,9 @@ class ResPartner(models.Model):
     expired_ignore = fields.Boolean(
         default=False,
     )
+    sale_order_ignore = fields.Boolean(
+        default=False,
+    )
 
     @api.one
     def _get_credit_used(self):
@@ -37,6 +41,9 @@ class ResPartner(models.Model):
                     self.credit_expired = True
         self.credit_avaiable = self.credit_limit
         self.credit_used = 0
+        if not self.sale_order_ignore:
+            for sale in self.env['sale.order'].search([('partner_id', '=', self.id), ('state', '=', 'sale'), ('invoice_status', '=', 'to invoice')]):
+                self.credit_used += sale.amount_total/sale.currency_id.rate
         if not self.credit_ignore:
             for invoice in invoices:
                 self.credit_used += invoice.amount_total/invoice.currency_id.rate
