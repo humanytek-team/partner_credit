@@ -9,7 +9,7 @@ class SaleOrder(models.Model):
     def action_confirm(self):
         payment_term_credits = [payment for payment in self.env['account.payment.term'].search([(1, '=', 1)]) if payment.line_ids[0] and payment.line_ids[0].days > 0]
         for order in self:
-            if order.payment_term_id in payment_term_credits:
+            if order.payment_term in payment_term_credits:
                 if not order.partner_id.expired_ignore and order.partner_id.credit_expired:
                     raise exceptions.Warning(_("¡POR EL MOMENTO NO SE PERMITE VENDER A CRÉDITO. EL CLIENTE TIENE SALDO VENCIDO EN FACTURAS ANTERIORES. PARA MAYOR INFORMACIÓN CONSULTAR EN CONTABILIDAD!"))
                 if not order.partner_id.credit_ignore:
