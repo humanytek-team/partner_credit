@@ -6,7 +6,7 @@ from datetime import timedelta
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    credit_available = fields.Monetary(
+    credit_available = fields.Float(
         compute='_get_credit_used'
     )
     credit_expired = fields.Boolean(
@@ -15,10 +15,10 @@ class ResPartner(models.Model):
     credit_ignore = fields.Boolean(
         default=False,
     )
-    credit_used = fields.Monetary(
+    credit_used = fields.Float(
         compute='_get_credit_used',
     )
-    credit_limit = fields.Monetary()
+    credit_limit = fields.Float()
     grace_days = fields.Integer()
     expired_ignore = fields.Boolean(
         default=False,
