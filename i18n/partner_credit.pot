@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-11 15:13+0000\n"
-"PO-Revision-Date: 2017-08-11 15:13+0000\n"
+"POT-Creation-Date: 2017-08-14 23:13+0000\n"
+"PO-Revision-Date: 2017-08-14 23:13+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,32 +16,32 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_credit
-#: model:ir.model.fields,field_description:partner_credit.field_res_partner_credit_available
+#: field:res.partner,credit_available:0
 msgid "Credit available"
 msgstr ""
 
 #. module: partner_credit
-#: model:ir.model.fields,field_description:partner_credit.field_res_partner_credit_expired
+#: field:res.partner,credit_expired:0
 msgid "Credit expired"
 msgstr ""
 
 #. module: partner_credit
-#: model:ir.model.fields,field_description:partner_credit.field_res_partner_credit_ignore
+#: field:res.partner,credit_ignore:0
 msgid "Credit ignore"
 msgstr ""
 
 #. module: partner_credit
-#: model:ir.model.fields,field_description:partner_credit.field_res_partner_credit_used
+#: field:res.partner,credit_used:0
 msgid "Credit used"
 msgstr ""
 
 #. module: partner_credit
-#: model:ir.model.fields,field_description:partner_credit.field_res_partner_expired_ignore
+#: field:res.partner,expired_ignore:0
 msgid "Expired ignore"
 msgstr ""
 
 #. module: partner_credit
-#: model:ir.model.fields,field_description:partner_credit.field_res_partner_grace_days
+#: field:res.partner,grace_days:0
 msgid "Grace days"
 msgstr ""
 
@@ -57,7 +57,7 @@ msgid "Partner credit"
 msgstr ""
 
 #. module: partner_credit
-#: model:ir.model.fields,field_description:partner_credit.field_res_partner_sale_order_ignore
+#: field:res.partner,sale_order_ignore:0
 msgid "Sale order ignore"
 msgstr ""
 
