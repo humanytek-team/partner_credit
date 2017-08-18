@@ -7,7 +7,7 @@ class SaleOrder(models.Model):
 
     @api.multi
     def action_button_confirm(self):
-        payment_term_credits = [payment for payment in self.env['account.payment.term'].search([(1, '=', 1)]) if payment.line_ids and payment.line_ids[0].days > 0] or []
+        payment_term_credits = [payment for payment in self.env['account.payment.term'].search([(1, '=', 1)]) if payment.line_ids and payment.line_ids[0].days > 0]
         for order in self:
             if order.payment_term in payment_term_credits:
                 if not order.partner_id.expired_ignore and order.partner_id.credit_expired:
