@@ -6,7 +6,8 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="account.view_partner_property_form"/>
             <field name="arch" type="xml">
-                <field name="credit_limit" position="after">
+                <field name="credit" position="after">
+                    <field name="credit_limit"/>
                     <field name="credit_ignore"/>
                     <field name="grace_days" attrs="{'invisible': [('expired_ignore', '=', True)]}"/>
                     <field name="expired_ignore"/>
@@ -37,5 +38,7 @@
         </record>
 
         <menuitem id="menu_partner_credit" name="Partner credit" parent="account.menu_finance_reports" action="partner_credit_action_tree"/>
+
+
     </data>
 </openerp>

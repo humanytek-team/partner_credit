@@ -20,12 +20,13 @@
 
 {
     'name': 'Partner Credit',
-    'version': '8.0.1.1.1',
+    'version': '9.0.1.1.1',
     'author': 'Humanytek',
     'website': 'http://humanytek.com',
     'depends': [
         'account',
         'sale',
+        'account_accountant',
     ],
     'data': [
         'views/res_partner.xml',
