@@ -20,7 +20,7 @@
 
 {
     'name': 'Partner Credit',
-    'version': '1.2.0',
+    'version': '1.2.1',
     'author': 'Humanytek',
     'website': 'http://humanytek.com',
     'depends': [
