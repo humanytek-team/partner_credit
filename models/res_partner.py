@@ -48,5 +48,6 @@ class ResPartner(models.Model):
                 self.credit_used += sale.amount_total / sale.currency_id.rate
         if not self.credit_ignore:
             for invoice in invoices:
-                self.credit_used += invoice.amount_total / invoice.currency_id.rate
+                if not invoice.move_name or invoice.move_name.split('/')[0] != 'VNMSI':
+                    self.credit_used += invoice.amount_total / invoice.currency_id.rate
         self.credit_avaiable -= self.credit_used
