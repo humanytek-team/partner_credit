@@ -29,9 +29,11 @@ class ResPartner(models.Model):
 
     @api.one
     def _get_credit_used(self):
-        payment_term_credits = [payment for payment in self.env['account.payment.term'].search([(1, '=', 1)]) if payment.line_ids[0] and payment.line_ids[0].days > 0]
+        payment_term_credits = [payment for payment in self.env['account.payment.term'].search(
+            [(1, '=', 1)]) if payment.line_ids[0] and payment.line_ids[0].days > 0]
         payment_term_credits_ids = [p.id for p in payment_term_credits]
-        invoices = self.env['account.invoice'].search([('partner_id', '=', self.id), ('state', '=', 'open'), ('payment_term_id', 'in', payment_term_credits_ids)])
+        invoices = self.env['account.invoice'].search([('partner_id', '=', self.id), (
+            'state', '=', 'open'), ('payment_term_id', 'in', payment_term_credits_ids)])
         if not self.expired_ignore:
             self.credit_expired = False
             today = fields.Date.from_string(fields.Date.today())
@@ -43,8 +45,8 @@ class ResPartner(models.Model):
         self.credit_used = 0
         if not self.sale_order_ignore:
             for sale in self.env['sale.order'].search([('partner_id', '=', self.id), ('state', '=', 'sale'), ('invoice_status', '=', 'to invoice')]):
-                self.credit_used += sale.amount_total/sale.currency_id.rate
+                self.credit_used += sale.amount_total / sale.currency_id.rate
         if not self.credit_ignore:
             for invoice in invoices:
-                self.credit_used += invoice.amount_total/invoice.currency_id.rate
+                self.credit_used += invoice.amount_total / invoice.currency_id.rate
         self.credit_avaiable -= self.credit_used
